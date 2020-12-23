@@ -37,10 +37,6 @@ export class TaskListComponent implements OnInit {
   ngOnInit(): void {
     this.tasks = [];
     this.getTasks();
-    // for (let i = 0; i < 10; i++) {
-    //   this.tasks.push({ id: i, description: 'Description of Task ' + i, status: this.taskStatusOpts[(i%3)].value});
-    // }
-
   }
 
   public newTask() {
@@ -55,11 +51,11 @@ export class TaskListComponent implements OnInit {
       status: 'Pendiente',
     }
     console.log('Creating task', newTask);
-    //TODO: Add task
     this.newTaskData.show = false;
     this.newTaskData.control.setValue('');
     this.tasks.push(newTask);
-    this.taskService.insert(this.tasks[length - 1]).subscribe(data => {
+
+    this.taskService.insert(newTask).subscribe(data => {
         console.log(data);
         this.getTasks();
       });
