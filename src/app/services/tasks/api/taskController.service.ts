@@ -26,7 +26,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class TaskControllerService {
 
-    protected basePath = 'http://localhost:8080';
+    protected basePath = 'https://everis-darytasks-ms.azure-api.net';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
